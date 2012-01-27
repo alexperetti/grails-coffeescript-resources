@@ -5,7 +5,12 @@ This plugin integrates <a href="http://jashkenas.github.com/coffee-script/">Coff
 
 
 ##Installation##
-<pre><code>grails install-plugin coffeescript-resources</code></pre>
+
+Not available via Grails portal
+
+Can point to a local copy by editing `BuildConfig.groovy`
+
+<pre><code>grails.plugin.location.'coffeescript-resources' = "<path-to-dir>/coffeescript-resources"</pre></code>
 
 ##Usage##
 <pre><code>'js' {
