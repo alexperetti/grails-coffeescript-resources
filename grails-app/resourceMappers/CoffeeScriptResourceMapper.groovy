@@ -1,14 +1,19 @@
 import org.jcoffeescript.JCoffeeScriptCompiler
-import org.jcoffeescript.JCoffeeScriptCompileException 
+import org.jcoffeescript.JCoffeeScriptCompileException
 import org.grails.plugin.resource.mapper.MapperPhase
+
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
+import org.codehaus.groovy.grails.commons.GrailsApplication
 
 /**
  * @author Alex Peretti
  *
  * Mapping file to compile .coffee files into .js files
  */
+class CoffeeScriptResourceMapper implements GrailsApplicationAware {
 
-class CoffeeScriptResourceMapper {
+    GrailsApplication grailsApplication
+
     def phase = MapperPhase.GENERATION // need to run early so that we don't miss out on all the good stuff
 
     static defaultExcludes = ['**/*.css','**/*.png','**/*.gif','**/*.jpg','**/*.jpeg','**/*.gz','**/*.zip']
@@ -46,4 +51,9 @@ class CoffeeScriptResourceMapper {
     private String generateCompiledFileFromOriginal(String original) {
          original.replaceAll(/(?i)\.coffee/, '_coffee.js')
     }
+
+    private File getOriginalFileSystemFile(String sourcePath) {
+        grailsApplication.parentContext.getResource(sourcePath).file
+    }
+
 }

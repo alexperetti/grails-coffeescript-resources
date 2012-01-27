@@ -1,13 +1,15 @@
 #CoffeeScript Resource plugin#
 This plugin integrates <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a> with the grails resources plugin.
-<a href="https://github.com/yeungda/jcoffeescript">JCoffeeScript</a> is the java library used to compile CoffeeScript.
+
+<a href="https://github.com/yeungda/jcoffeescript">JCoffeeScript</a> is the java library used to compile to CoffeeScript version 1.1.
+
 
 ##Installation##
 <pre><code>grails install-plugin coffeescript-resources</code></pre>
 
 ##Usage##
 <pre><code>'js' {
-        resource url:'js/test.coffee',attrs:[rel: "script/javascript", type:'js'], bundle:'bundle_js'
+        resource url:'coffee/test.coffee',attrs:[rel: "script/javascript", type:'js'], bundle:'bundle_coffee'
         resource url:'js/main.js'
     }
 </code></pre>
@@ -25,7 +27,7 @@ See the <a href="http://www.grails.org/plugin/resources">Resources plugin</a> fo
 ##Issues##
 <ul>
     <li>Must specify the default bundle manually as this is calculated based on file extension by default.</li>
-    <li>When debug is switched on there is currently no way to fall back to the standard LESS javascript support. The less files will be rendered unprocessed</li>
+    <li>When debug is switched on there is currently no way to fall back to compiled coffeescript. The coffee files will be rendered unprocessed</li>
 </ul>
 
 ##Special Thanks##

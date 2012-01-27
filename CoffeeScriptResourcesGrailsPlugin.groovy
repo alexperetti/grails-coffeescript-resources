@@ -1,15 +1,15 @@
 class CoffeeScriptResourcesGrailsPlugin {
     // the plugin version
-    def version = "0.3"
+    def version = "0.4"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "1.3.7 > *"
+    def grailsVersion = "2.0.0 > *"
     // the other plugins this plugin depends on
     def dependsOn = [resources:'1.0 > *']
     def loadAfter = ['resources']
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/*.gsp",
-            "web-app/js/*"
+            "web-app/coffee/*"
     ]
 
     def author = "Alex Peretti"

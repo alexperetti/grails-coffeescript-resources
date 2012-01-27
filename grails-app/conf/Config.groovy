@@ -1,5 +1,5 @@
 // configuration for plugin testing - will not be included in the plugin zip
- 
+
 log4j = {
     // Example of changing the log pattern for the default console
     // appender:
@@ -25,6 +25,8 @@ log4j = {
 
 grails.resources.modules = {
     'coffee' {
-        resource url:'js/test.coffee',attrs:[rel: "script/coffee", type:'js'], bundle:'bundle_coffee'
+        resource url:'coffee/test.coffee',attrs:[rel: "script/coffee", type:'js'], bundle:'bundle_coffee'
     }
 }
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
